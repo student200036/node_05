@@ -12,5 +12,5 @@ const host = process.env.HOST
 const port = process.env.PORT
 
 http.listen(port,host, () => {
-    console.log('http//' + host + ':' + port)
+    console.log('http://' + host + ':' + port)
 })
