@@ -11,6 +11,13 @@ dotenv.config()
 const host = process.env.HOST
 const port = process.env.PORT
 
+io.on('connection', (socket) => {
+    socket.on('message',(data) => {
+        console.log(data)
+        io.emit('message', data)
+    })
+})
+
 http.listen(port,host, () => {
     console.log('http://' + host + ':' + port)
 })
